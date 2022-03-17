@@ -41,15 +41,15 @@ pub fn criterion_benchmark<P: Measurement>(c: &mut Criterion<P>) {
     // ];
 
     let args = &[
-        (0u8, 7),
-        (1u8, 7),
-        (2u8, 7),
-        (3u8, 5),
-        (4u8, 3),
-        (5u8, 3),
-        (6u8, 3),
-        (7u8, 2),
-        (8u8, 2),
+        (0u64, 7),
+        (1u64, 7),
+        (2u64, 7),
+        (3u64, 5),
+        (4u64, 3),
+        (5u64, 3),
+        (6u64, 3),
+        (7u64, 2),
+        (8u64, 2),
     ];
     bench_pow!(c, "pow_std", pow_std, args);
     bench_pow!(c, "pow_std_2opt", pow_std_2opt, args);
@@ -58,7 +58,7 @@ pub fn criterion_benchmark<P: Measurement>(c: &mut Criterion<P>) {
     bench_pow!(c, "pow_alt_01opt", pow_alt_01opt, args);
     bench_pow!(c, "pow_alt_012opt", pow_alt_012opt, args);
     // bench_pow!(c, "u32::pow", (u32::pow), args);
-    bench_pow!(c, "u8::pow", (u8::pow), args);
+    bench_pow!(c, "u64::pow", (u64::pow), args);
     bench_pow!(c, "pow_alt_inline", pow_alt_inline, args);
     bench_pow!(c, "pow_alt_2opt_inline", pow_alt_2opt_inline, args);
 }
