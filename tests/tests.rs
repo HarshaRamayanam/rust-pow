@@ -2,15 +2,6 @@ use pow::*;
 
 #[test]
 fn test_ranges() {
-    // let args = vec![
-    //     (0,31),
-    //     (1,31),
-    //     (2,31),
-    //     (3,18),
-    //     (7,11),
-    //     (3,7),
-    // ];
-
     let args = vec![
         (0,31),
         (1,31),
@@ -19,7 +10,7 @@ fn test_ranges() {
         (7,11),
         (3,7),
     ];
-    let funcs: Vec<(&str, fn(u16,u32)->u16)> = vec![
+    let funcs: Vec<(&str, fn(u32,u32)->u32)> = vec![
         ("pow_std", pow_std),
         ("pow_std_2opt", pow_std_2opt),
         ("pow_alt", pow_alt),
@@ -31,7 +22,7 @@ fn test_ranges() {
     ];
     for (base, max_exp) in args {
         for exp in 0..=max_exp {
-            let answer = u16::pow(base, exp);
+            let answer = u32::pow(base, exp);
             for (name, func) in &funcs {
                 println!("{}({},{})", name, base, exp);
                 assert_eq!(answer, (*func)(base, exp));
