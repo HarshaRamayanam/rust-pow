@@ -41,8 +41,8 @@ pub fn criterion_benchmark<P: Measurement>(c: &mut Criterion<P>) {
     // ];
 
     let args = &[
-        (0u8, 63),
-        (1u8, 63),
+        (0u8, 7),
+        (1u8, 7),
         (2u8, 7),
         (3u8, 5),
         (4u8, 3),
