@@ -41,15 +41,15 @@ pub fn criterion_benchmark<P: Measurement>(c: &mut Criterion<P>) {
     // ];
 
     let args = &[
-        (0u64, 7),
-        (1u64, 7),
-        (2u64, 7),
-        (3u64, 5),
-        (4u64, 3),
-        (5u64, 3),
-        (6u64, 3),
-        (7u64, 2),
-        (8u64, 2),
+        (0u64, 63),
+        (1u64, 63),
+        (2u64, 63),
+        (3u64, 40),
+        (4u64, 31),
+        (5u64, 27),
+        (6u64, 24),
+        (7u64, 22),
+        (8u64, 21),
     ];
     bench_pow!(c, "pow_std", pow_std, args);
     bench_pow!(c, "pow_std_2opt", pow_std_2opt, args);
