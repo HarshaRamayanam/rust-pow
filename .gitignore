@@ -1,2 +1,6 @@
-/target
+/target/rls
+/target/.rustc_info.json
+/target/CACHEDIR.TAG
+/target/release
+/target/tmp
 Cargo.lock
