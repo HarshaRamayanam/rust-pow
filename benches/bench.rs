@@ -28,16 +28,28 @@ macro_rules! bench_pow {
 
 pub fn criterion_benchmark<P: Measurement>(c: &mut Criterion<P>) {
     #[rustfmt::ignore]
+    // let args = &[
+    //     (0, 63),
+    //     (1, 63),
+    //     (2, 31),
+    //     (3, 20),
+    //     (4, 15),
+    //     (5, 14),
+    //     (6, 12),
+    //     (7, 11),
+    //     (8, 10),
+    // ];
+
     let args = &[
-        (0, 63),
-        (1, 63),
-        (2, 31),
-        (3, 20),
-        (4, 15),
-        (5, 14),
-        (6, 12),
-        (7, 11),
-        (8, 10),
+        (0u8, 63),
+        (1u8, 63),
+        (2u8, 7),
+        (3u8, 5),
+        (4u8, 3),
+        (5u8, 3),
+        (6u8, 3),
+        (7u8, 2),
+        (8u8, 2),
     ];
     bench_pow!(c, "pow_std", pow_std, args);
     bench_pow!(c, "pow_std_2opt", pow_std_2opt, args);
@@ -45,7 +57,8 @@ pub fn criterion_benchmark<P: Measurement>(c: &mut Criterion<P>) {
     bench_pow!(c, "pow_alt_2opt", pow_alt_2opt, args);
     bench_pow!(c, "pow_alt_01opt", pow_alt_01opt, args);
     bench_pow!(c, "pow_alt_012opt", pow_alt_012opt, args);
-    bench_pow!(c, "u32::pow", (u32::pow), args);
+    // bench_pow!(c, "u32::pow", (u32::pow), args);
+    bench_pow!(c, "u8::pow", (u8::pow), args);
     bench_pow!(c, "pow_alt_inline", pow_alt_inline, args);
     bench_pow!(c, "pow_alt_2opt_inline", pow_alt_2opt_inline, args);
 }
